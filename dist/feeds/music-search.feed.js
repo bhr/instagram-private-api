@@ -52,25 +52,25 @@ class MusicSearchFeed extends feed_1.Feed {
   }
 }
 __decorate(
-  [class_transformer_1.Expose(), __metadata('design:type', String)],
+  [(0, class_transformer_1.Expose)(), __metadata('design:type', String)],
   MusicSearchFeed.prototype,
   'nextCursor',
   void 0,
 );
 __decorate(
-  [class_transformer_1.Expose(), __metadata('design:type', String)],
+  [(0, class_transformer_1.Expose)(), __metadata('design:type', String)],
   MusicSearchFeed.prototype,
   'product',
   void 0,
 );
 __decorate(
-  [class_transformer_1.Expose(), __metadata('design:type', String)],
+  [(0, class_transformer_1.Expose)(), __metadata('design:type', String)],
   MusicSearchFeed.prototype,
   'query',
   void 0,
 );
 __decorate(
-  [class_transformer_1.Expose(), __metadata('design:type', String)],
+  [(0, class_transformer_1.Expose)(), __metadata('design:type', String)],
   MusicSearchFeed.prototype,
   'searchSessionId',
   void 0,

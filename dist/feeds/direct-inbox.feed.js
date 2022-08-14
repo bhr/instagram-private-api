@@ -53,13 +53,13 @@ class DirectInboxFeed extends feed_1.Feed {
   }
 }
 __decorate(
-  [class_transformer_1.Expose(), __metadata('design:type', String)],
+  [(0, class_transformer_1.Expose)(), __metadata('design:type', String)],
   DirectInboxFeed.prototype,
   'cursor',
   void 0,
 );
 __decorate(
-  [class_transformer_1.Expose(), __metadata('design:type', Number)],
+  [(0, class_transformer_1.Expose)(), __metadata('design:type', Number)],
   DirectInboxFeed.prototype,
   'seqId',
   void 0,

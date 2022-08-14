@@ -42,6 +42,11 @@ class SavedFeed extends feed_1.Feed {
     return items.map(i => i.media);
   }
 }
-__decorate([class_transformer_1.Expose(), __metadata('design:type', String)], SavedFeed.prototype, 'nextMaxId', void 0);
+__decorate(
+  [(0, class_transformer_1.Expose)(), __metadata('design:type', String)],
+  SavedFeed.prototype,
+  'nextMaxId',
+  void 0,
+);
 exports.SavedFeed = SavedFeed;
 //# sourceMappingURL=saved.feed.js.map

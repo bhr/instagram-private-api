@@ -44,7 +44,7 @@ class IgtvBrowseFeed extends feed_1.Feed {
   }
 }
 __decorate(
-  [class_transformer_1.Expose(), __metadata('design:type', String)],
+  [(0, class_transformer_1.Expose)(), __metadata('design:type', String)],
   IgtvBrowseFeed.prototype,
   'maxId',
   void 0,

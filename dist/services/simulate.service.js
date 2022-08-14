@@ -46,7 +46,7 @@ class SimulateService extends repository_1.Repository {
   }
   static async executeRequestsFlow({ requests, concurrency = 1, toShuffle = true }) {
     if (toShuffle) {
-      requests = lodash_1.shuffle(requests);
+      requests = (0, lodash_1.shuffle)(requests);
     }
     await Bluebird.map(requests, request => request(), { concurrency });
   }

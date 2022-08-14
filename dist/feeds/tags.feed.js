@@ -52,7 +52,7 @@ class TagsFeed extends feed_1.Feed {
   }
   async items() {
     const response = await this.request();
-    return lodash_1.flatten(
+    return (0, lodash_1.flatten)(
       response.sections.map(section => {
         if (section.layout_type !== 'media_grid') return;
         return section.layout_content.medias.map(medias => medias.media);
@@ -60,10 +60,20 @@ class TagsFeed extends feed_1.Feed {
     );
   }
 }
-__decorate([class_transformer_1.Expose(), __metadata('design:type', String)], TagsFeed.prototype, 'nextMaxId', void 0);
-__decorate([class_transformer_1.Expose(), __metadata('design:type', Number)], TagsFeed.prototype, 'nextPage', void 0);
 __decorate(
-  [class_transformer_1.Expose(), __metadata('design:type', Array)],
+  [(0, class_transformer_1.Expose)(), __metadata('design:type', String)],
+  TagsFeed.prototype,
+  'nextMaxId',
+  void 0,
+);
+__decorate(
+  [(0, class_transformer_1.Expose)(), __metadata('design:type', Number)],
+  TagsFeed.prototype,
+  'nextPage',
+  void 0,
+);
+__decorate(
+  [(0, class_transformer_1.Expose)(), __metadata('design:type', Array)],
   TagsFeed.prototype,
   'nextMediaIds',
   void 0,

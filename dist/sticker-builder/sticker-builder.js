@@ -30,15 +30,16 @@ class StickerBuilder {
       stickers.forEach(sticker => additionalProperties.push(sticker.additionalConfigureProperties));
       ids.push(stickers[0].id);
     }
-    return Object.assign(Object.assign(Object.assign({}, lodash_1.defaults({}, ...additionalProperties)), result), {
-      story_sticker_ids: ids.join(','),
-    });
+    return Object.assign(
+      Object.assign(Object.assign({}, (0, lodash_1.defaults)({}, ...additionalProperties)), result),
+      { story_sticker_ids: ids.join(',') },
+    );
   }
   static hashtag(options) {
-    return class_transformer_1.plainToClass(stickers_1.HashtagSticker, options);
+    return (0, class_transformer_1.plainToClass)(stickers_1.HashtagSticker, options);
   }
   static mention(options) {
-    return class_transformer_1.plainToClass(stickers_1.MentionSticker, options);
+    return (0, class_transformer_1.plainToClass)(stickers_1.MentionSticker, options);
   }
   static mentionReel(mediaInfo, additional = {}) {
     return StickerBuilder.mention(
@@ -55,31 +56,31 @@ class StickerBuilder {
     );
   }
   static location(options) {
-    return class_transformer_1.plainToClass(stickers_1.LocationSticker, options);
+    return (0, class_transformer_1.plainToClass)(stickers_1.LocationSticker, options);
   }
   static countdown(options) {
-    return class_transformer_1.plainToClass(stickers_1.CountdownSticker, options);
+    return (0, class_transformer_1.plainToClass)(stickers_1.CountdownSticker, options);
   }
   static chat(options) {
-    return class_transformer_1.plainToClass(stickers_1.ChatSticker, options);
+    return (0, class_transformer_1.plainToClass)(stickers_1.ChatSticker, options);
   }
   static poll(options) {
-    return class_transformer_1.plainToClass(stickers_1.PollSticker, options);
+    return (0, class_transformer_1.plainToClass)(stickers_1.PollSticker, options);
   }
   static question(options) {
-    return class_transformer_1.plainToClass(stickers_1.QuestionSticker, options);
+    return (0, class_transformer_1.plainToClass)(stickers_1.QuestionSticker, options);
   }
   static quiz(options) {
-    return class_transformer_1.plainToClass(
+    return (0, class_transformer_1.plainToClass)(
       stickers_1.QuizSticker,
       Object.assign({ width: 0.7291667, height: 0.11824318 + options.options.length * 0.10304056 }, options),
     );
   }
   static slider(options) {
-    return class_transformer_1.plainToClass(stickers_1.SliderSticker, options);
+    return (0, class_transformer_1.plainToClass)(stickers_1.SliderSticker, options);
   }
   static attachment(options) {
-    return class_transformer_1.plainToClass(stickers_1.AttachmentSticker, options);
+    return (0, class_transformer_1.plainToClass)(stickers_1.AttachmentSticker, options);
   }
   static attachmentFromMedia(mediaInfo, additional = {}) {
     return StickerBuilder.attachment(

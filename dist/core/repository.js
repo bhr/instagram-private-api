@@ -27,7 +27,7 @@ class Repository {
   }
 }
 __decorate(
-  [decorators_1.Enumerable(false), __metadata('design:type', client_1.IgApiClient)],
+  [(0, decorators_1.Enumerable)(false), __metadata('design:type', client_1.IgApiClient)],
   Repository.prototype,
   'client',
   void 0,

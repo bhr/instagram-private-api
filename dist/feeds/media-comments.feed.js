@@ -45,13 +45,13 @@ class MediaCommentsFeed extends feed_1.Feed {
   }
 }
 __decorate(
-  [class_transformer_1.Expose(), __metadata('design:type', String)],
+  [(0, class_transformer_1.Expose)(), __metadata('design:type', String)],
   MediaCommentsFeed.prototype,
   'nextMaxId',
   void 0,
 );
 __decorate(
-  [class_transformer_1.Expose(), __metadata('design:type', String)],
+  [(0, class_transformer_1.Expose)(), __metadata('design:type', String)],
   MediaCommentsFeed.prototype,
   'nextMinId',
   void 0,

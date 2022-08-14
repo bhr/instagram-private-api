@@ -10,7 +10,7 @@ class IgtvRepository extends repository_1.Repository {
       url: '/api/v1/igtv/write_seen_state/',
       method: 'POST',
       form: this.client.request.sign({
-        seen_state: JSON.stringify(lodash_1.defaults(options, { impressions: {}, grid_impressions: [] })),
+        seen_state: JSON.stringify((0, lodash_1.defaults)(options, { impressions: {}, grid_impressions: [] })),
         _csrftoken: this.client.state.cookieCsrfToken,
         _uid: this.client.state.cookieUserId,
         _uuid: this.client.state.uuid,

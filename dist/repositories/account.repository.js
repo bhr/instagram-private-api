@@ -91,7 +91,7 @@ class AccountRepository extends repository_1.Repository {
     };
   }
   async twoFactorLogin(options) {
-    options = lodash_1.defaultsDeep(options, {
+    options = (0, lodash_1.defaultsDeep)(options, {
       trustThisDevice: '1',
       verificationMethod: '1',
     });
@@ -330,5 +330,5 @@ class AccountRepository extends repository_1.Repository {
   }
 }
 exports.AccountRepository = AccountRepository;
-AccountRepository.accountDebug = debug_1.default('ig:account');
+AccountRepository.accountDebug = (0, debug_1.default)('ig:account');
 //# sourceMappingURL=account.repository.js.map

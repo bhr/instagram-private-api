@@ -39,7 +39,7 @@ class MentionSticker extends insta_sticker_1.InstaSticker {
   }
 }
 __decorate(
-  [decorators_1.Enumerable(false), __metadata('design:type', String)],
+  [(0, decorators_1.Enumerable)(false), __metadata('design:type', String)],
   MentionSticker.prototype,
   'mediaId',
   void 0,

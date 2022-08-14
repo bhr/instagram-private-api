@@ -369,11 +369,11 @@ class PublishService extends repository_1.Repository {
     }
   }
   async regularVideo(options) {
-    options = lodash_1.defaults(options, {
+    options = (0, lodash_1.defaults)(options, {
       uploadId: Date.now(),
       waterfallId: this.chance.guid({ version: 4 }),
     });
-    options.uploadName = options.uploadName || `${options.uploadId}_0_${lodash_1.random(1000000000, 9999999999)}`;
+    options.uploadName = options.uploadName || `${options.uploadId}_0_${(0, lodash_1.random)(1000000000, 9999999999)}`;
     const ruploadParams = upload_repository_1.UploadRepository.createVideoRuploadParams(options, options.uploadId);
     const { offset } = await this.client.upload.initVideo({
       name: options.uploadName,
@@ -390,7 +390,7 @@ class PublishService extends repository_1.Repository {
       uploadId,
       retryContext,
     );
-    const waterfallId = options.waterfallId || lodash_1.random(1000000000, 9999999999).toString();
+    const waterfallId = options.waterfallId || (0, lodash_1.random)(1000000000, 9999999999).toString();
     const { stream_id: streamId } = await this.client.upload.startSegmentedVideo(ruploadParams);
     const segments =
       options.segments ||
@@ -443,7 +443,7 @@ class PublishService extends repository_1.Repository {
     );
   }
   async uploadAndConfigureStoryVideo(options, configureOptions) {
-    const uploadId = lodash_1.random(100000000000, 999999999999).toString();
+    const uploadId = (0, lodash_1.random)(100000000000, 999999999999).toString();
     const videoInfo = PublishService.getVideoInfo(options.video);
     PublishService.publishDebug(`Publishing video to story: ${JSON.stringify(videoInfo)}`);
     const waterfallId = this.chance.guid({ version: 4 });
@@ -493,5 +493,5 @@ class PublishService extends repository_1.Repository {
   }
 }
 exports.PublishService = PublishService;
-PublishService.publishDebug = debug_1.default('ig:publish');
+PublishService.publishDebug = (0, debug_1.default)('ig:publish');
 //# sourceMappingURL=publish.service.js.map

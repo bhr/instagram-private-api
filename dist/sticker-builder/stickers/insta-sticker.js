@@ -52,7 +52,7 @@ class InstaSticker {
     return this;
   }
   toJSON() {
-    return snakeCaseKeys(class_transformer_1.classToPlain(this), { deep: true });
+    return snakeCaseKeys((0, class_transformer_1.classToPlain)(this), { deep: true });
   }
 }
 exports.InstaSticker = InstaSticker;

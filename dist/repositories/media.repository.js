@@ -61,7 +61,7 @@ class MediaRepository extends repository_1.Repository {
             media_id: options.mediaId,
             _csrftoken: this.client.state.cookieCsrfToken,
           },
-          lodash_1.omit(options.moduleInfo, 'module_name'),
+          (0, lodash_1.omit)(options.moduleInfo, 'module_name'),
         ),
         {
           radio_type: this.client.state.radioType,
@@ -182,7 +182,7 @@ class MediaRepository extends repository_1.Repository {
   }
   async uploadFinish(options) {
     if (options.video) {
-      options.video = lodash_1.defaultsDeep(options.video, {
+      options.video = (0, lodash_1.defaultsDeep)(options.video, {
         clips: [{ length: options.video.length, source_type: options.source_type }],
         poster_frame_index: 0,
         audio_muted: false,
@@ -217,7 +217,7 @@ class MediaRepository extends repository_1.Repository {
     const width = options.width || 1520;
     const height = options.height || 2048;
     const devicePayload = this.client.state.devicePayload;
-    return lodash_1.defaultsDeep(
+    return (0, lodash_1.defaultsDeep)(
       options,
       Object.assign(
         {
@@ -356,7 +356,7 @@ class MediaRepository extends repository_1.Repository {
   async configureToStoryVideo(options) {
     const now = Date.now();
     const devicePayload = this.client.state.devicePayload;
-    const form = lodash_1.defaultsDeep(options, {
+    const form = (0, lodash_1.defaultsDeep)(options, {
       supported_capabilities_new: JSON.stringify(this.client.state.supportedCapabilities),
       timezone_offset: '0',
       _csrftoken: this.client.state.cookieCsrfToken,
@@ -406,7 +406,7 @@ class MediaRepository extends repository_1.Repository {
     const devicePayload = this.client.state.devicePayload;
     const sidecarId = options.upload_id || Date.now().toString();
     const now = luxon_1.DateTime.local().toFormat('yyyy:mm:dd HH:mm:ss');
-    options = lodash_1.defaultsDeep(options, {
+    options = (0, lodash_1.defaultsDeep)(options, {
       _csrftoken: this.client.state.cookieCsrfToken,
       _uid: this.client.state.cookieUserId,
       _uuid: this.client.state.uuid,
@@ -420,7 +420,7 @@ class MediaRepository extends repository_1.Repository {
     });
     options.children_metadata = options.children_metadata.map(item => {
       const { width, height } = item;
-      item = lodash_1.defaultsDeep(item, {
+      item = (0, lodash_1.defaultsDeep)(item, {
         timezone_offset: '0',
         caption: null,
         source_type: '4',
@@ -441,7 +441,7 @@ class MediaRepository extends repository_1.Repository {
         item.usertags = JSON.stringify(item.usertags);
       }
       if (isVideo(item)) {
-        item = lodash_1.defaultsDeep(item, {
+        item = (0, lodash_1.defaultsDeep)(item, {
           filter_type: '0',
           video_result: '',
           date_time_original: now,
@@ -467,7 +467,7 @@ class MediaRepository extends repository_1.Repository {
     return body;
   }
   async configureToIgtv(options) {
-    const form = lodash_1.defaultsDeep(options, {
+    const form = (0, lodash_1.defaultsDeep)(options, {
       caption: '',
       date_time_original: new Date().toISOString().replace(/[-:]/g, ''),
       igtv_share_preview_to_feed: '0',
@@ -596,7 +596,7 @@ class MediaRepository extends repository_1.Repository {
   async storyQuestionResponse(mediaId, questionId, options) {
     const chance = new Chance();
     if (typeof options.response === 'undefined') {
-      options = lodash_1.defaultsDeep(options, { music_browse_session_id: chance.guid({ version: 4 }) });
+      options = (0, lodash_1.defaultsDeep)(options, { music_browse_session_id: chance.guid({ version: 4 }) });
     }
     const { body } = await this.client.request.send({
       url: `/api/v1/media/${mediaId}/${questionId}/story_question_response/`,

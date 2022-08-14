@@ -41,12 +41,12 @@ class BestiesFeed extends feed_1.Feed {
   async items() {
     const body = await this.request();
     return body.users.map(user =>
-      class_transformer_1.plainToClassFromExist(new responses_1.BestiesFeedResponseUsersItem(this.client), user),
+      (0, class_transformer_1.plainToClassFromExist)(new responses_1.BestiesFeedResponseUsersItem(this.client), user),
     );
   }
 }
 __decorate(
-  [class_transformer_1.Expose(), __metadata('design:type', String)],
+  [(0, class_transformer_1.Expose)(), __metadata('design:type', String)],
   BestiesFeed.prototype,
   'nextMaxId',
   void 0,

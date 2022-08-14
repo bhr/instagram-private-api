@@ -89,7 +89,7 @@ class UserRepository extends repository_1.Repository {
     return user.pk;
   }
   async lookup(options) {
-    options = lodash_1.defaults(options, {
+    options = (0, lodash_1.defaults)(options, {
       waterfallId: new Chance().guid({ version: 4 }),
       directlySignIn: true,
       countryCodes: [{ country_code: '1', source: ['default'] }],

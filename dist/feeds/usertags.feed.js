@@ -42,7 +42,7 @@ class UsertagsFeed extends feed_1.Feed {
   }
 }
 __decorate(
-  [class_transformer_1.Expose(), __metadata('design:type', String)],
+  [(0, class_transformer_1.Expose)(), __metadata('design:type', String)],
   UsertagsFeed.prototype,
   'nextMaxId',
   void 0,

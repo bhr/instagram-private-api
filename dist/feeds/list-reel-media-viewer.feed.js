@@ -50,13 +50,13 @@ class ListReelMediaViewerFeed extends feed_1.Feed {
   }
 }
 __decorate(
-  [class_transformer_1.Expose(), __metadata('design:type', String)],
+  [(0, class_transformer_1.Expose)(), __metadata('design:type', String)],
   ListReelMediaViewerFeed.prototype,
   'mediaId',
   void 0,
 );
 __decorate(
-  [class_transformer_1.Expose(), __metadata('design:type', String)],
+  [(0, class_transformer_1.Expose)(), __metadata('design:type', String)],
   ListReelMediaViewerFeed.prototype,
   'nextMaxId',
   void 0,

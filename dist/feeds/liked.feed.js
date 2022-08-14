@@ -43,6 +43,11 @@ class LikedFeed extends feed_1.Feed {
     this.maxId = (_a = response.next_max_id) === null || _a === void 0 ? void 0 : _a.toString();
   }
 }
-__decorate([class_transformer_1.Expose(), __metadata('design:type', String)], LikedFeed.prototype, 'maxId', void 0);
+__decorate(
+  [(0, class_transformer_1.Expose)(), __metadata('design:type', String)],
+  LikedFeed.prototype,
+  'maxId',
+  void 0,
+);
 exports.LikedFeed = LikedFeed;
 //# sourceMappingURL=liked.feed.js.map

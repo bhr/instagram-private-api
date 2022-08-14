@@ -19,6 +19,6 @@ export declare abstract class InstaSticker {
   top(): this;
   bottom(): this;
   toJSON(): {
-    [key: string]: unknown;
+    [key: string]: any;
   };
 }

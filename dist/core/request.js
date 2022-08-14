@@ -24,14 +24,14 @@ class Request {
     try {
       response.body = JSONbigString.parse(body);
     } catch (e) {
-      if (lodash_1.inRange(response.statusCode, 200, 299)) {
+      if ((0, lodash_1.inRange)(response.statusCode, 200, 299)) {
         throw e;
       }
     }
     return resolveWithFullResponse ? response : response.body;
   }
   async send(userOptions, onlyCheckHttpStatus) {
-    const options = lodash_1.defaultsDeep(
+    const options = (0, lodash_1.defaultsDeep)(
       userOptions,
       {
         baseUrl: 'https://i.instagram.com/',
@@ -79,8 +79,7 @@ class Request {
     }
   }
   signature(data) {
-    return crypto_1
-      .createHmac('sha256', this.client.state.signatureKey)
+    return (0, crypto_1.createHmac)('sha256', this.client.state.signatureKey)
       .update(data)
       .digest('hex');
   }
@@ -93,12 +92,11 @@ class Request {
     };
   }
   userBreadcrumb(size) {
-    const term = lodash_1.random(2, 3) * 1000 + size + lodash_1.random(15, 20) * 1000;
-    const textChangeEventCount = Math.round(size / lodash_1.random(2, 3)) || 1;
+    const term = (0, lodash_1.random)(2, 3) * 1000 + size + (0, lodash_1.random)(15, 20) * 1000;
+    const textChangeEventCount = Math.round(size / (0, lodash_1.random)(2, 3)) || 1;
     const data = `${size} ${term} ${textChangeEventCount} ${Date.now()}`;
     const signature = Buffer.from(
-      crypto_1
-        .createHmac('sha256', this.client.state.userBreadcrumbKey)
+      (0, crypto_1.createHmac)('sha256', this.client.state.userBreadcrumbKey)
         .update(data)
         .digest('hex'),
     ).toString('base64');
@@ -143,7 +141,7 @@ class Request {
   }
   async faultTolerantRequest(options) {
     try {
-      return await attempt_1.retry(async () => request(options), this.attemptOptions);
+      return await (0, attempt_1.retry)(async () => request(options), this.attemptOptions);
     } catch (err) {
       throw new errors_1.IgNetworkError(err);
     }
@@ -159,7 +157,7 @@ class Request {
       'X-IG-Device-Locale': this.client.state.language,
       'X-Pigeon-Session-Id': this.client.state.pigeonSessionId,
       'X-Pigeon-Rawclienttime': (Date.now() / 1000).toFixed(3),
-      'X-IG-Connection-Speed': `${lodash_1.random(1000, 3700)}kbps`,
+      'X-IG-Connection-Speed': `${(0, lodash_1.random)(1000, 3700)}kbps`,
       'X-IG-Bandwidth-Speed-KBPS': '-1.000',
       'X-IG-Bandwidth-TotalBytes-B': '0',
       'X-IG-Bandwidth-TotalTime-MS': '0',
@@ -185,5 +183,5 @@ class Request {
   }
 }
 exports.Request = Request;
-Request.requestDebug = debug_1.default('ig:request');
+Request.requestDebug = (0, debug_1.default)('ig:request');
 //# sourceMappingURL=request.js.map

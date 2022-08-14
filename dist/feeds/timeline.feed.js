@@ -25,7 +25,7 @@ const feed_1 = require('../core/feed');
 class TimelineFeed extends feed_1.Feed {
   constructor() {
     super(...arguments);
-    this.reason = lodash_1.sample(['pull_to_refresh', 'warm_start_fetch', 'cold_start_fetch']);
+    this.reason = (0, lodash_1.sample)(['pull_to_refresh', 'warm_start_fetch', 'cold_start_fetch']);
   }
   set state(body) {
     this.moreAvailable = body.more_available;
@@ -85,7 +85,7 @@ class TimelineFeed extends feed_1.Feed {
   }
 }
 __decorate(
-  [class_transformer_1.Expose(), __metadata('design:type', String)],
+  [(0, class_transformer_1.Expose)(), __metadata('design:type', String)],
   TimelineFeed.prototype,
   'nextMaxId',
   void 0,

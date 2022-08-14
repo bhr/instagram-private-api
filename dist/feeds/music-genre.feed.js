@@ -50,17 +50,22 @@ class MusicGenreFeed extends feed_1.Feed {
   }
 }
 __decorate(
-  [class_transformer_1.Expose(), __metadata('design:type', String)],
+  [(0, class_transformer_1.Expose)(), __metadata('design:type', String)],
   MusicGenreFeed.prototype,
   'nextCursor',
   void 0,
 );
 __decorate(
-  [class_transformer_1.Expose(), __metadata('design:type', String)],
+  [(0, class_transformer_1.Expose)(), __metadata('design:type', String)],
   MusicGenreFeed.prototype,
   'product',
   void 0,
 );
-__decorate([class_transformer_1.Expose(), __metadata('design:type', Object)], MusicGenreFeed.prototype, 'id', void 0);
+__decorate(
+  [(0, class_transformer_1.Expose)(), __metadata('design:type', Object)],
+  MusicGenreFeed.prototype,
+  'id',
+  void 0,
+);
 exports.MusicGenreFeed = MusicGenreFeed;
 //# sourceMappingURL=music-genre.feed.js.map

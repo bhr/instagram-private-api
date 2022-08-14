@@ -12,7 +12,7 @@ class UploadRepository extends repository_1.Repository {
   }
   async photo(options) {
     const uploadId = options.uploadId || Date.now();
-    const name = `${uploadId}_0_${lodash_1.random(1000000000, 9999999999)}`;
+    const name = `${uploadId}_0_${(0, lodash_1.random)(1000000000, 9999999999)}`;
     const contentLength = options.file.byteLength;
     UploadRepository.uploadDebug(`Uploading ${options.file.byteLength}b as ${uploadId} (photo, jpeg)`);
     const { body } = await this.client.request.send({
@@ -36,7 +36,7 @@ class UploadRepository extends repository_1.Repository {
   async video(options) {
     const video = options.video;
     const uploadId = options.uploadId || Date.now();
-    const name = options.uploadName || `${uploadId}_0_${lodash_1.random(1000000000, 9999999999)}`;
+    const name = options.uploadName || `${uploadId}_0_${(0, lodash_1.random)(1000000000, 9999999999)}`;
     const contentLength = video.byteLength;
     const waterfallId = options.waterfallId || this.chance.guid({ version: 4 });
     const ruploadParams = UploadRepository.createVideoRuploadParams(options, uploadId);
@@ -220,5 +220,5 @@ class UploadRepository extends repository_1.Repository {
   }
 }
 exports.UploadRepository = UploadRepository;
-UploadRepository.uploadDebug = debug_1.default('ig:upload');
+UploadRepository.uploadDebug = (0, debug_1.default)('ig:upload');
 //# sourceMappingURL=upload.repository.js.map

@@ -50,17 +50,22 @@ class MusicMoodFeed extends feed_1.Feed {
   }
 }
 __decorate(
-  [class_transformer_1.Expose(), __metadata('design:type', String)],
+  [(0, class_transformer_1.Expose)(), __metadata('design:type', String)],
   MusicMoodFeed.prototype,
   'nextCursor',
   void 0,
 );
 __decorate(
-  [class_transformer_1.Expose(), __metadata('design:type', String)],
+  [(0, class_transformer_1.Expose)(), __metadata('design:type', String)],
   MusicMoodFeed.prototype,
   'product',
   void 0,
 );
-__decorate([class_transformer_1.Expose(), __metadata('design:type', Object)], MusicMoodFeed.prototype, 'id', void 0);
+__decorate(
+  [(0, class_transformer_1.Expose)(), __metadata('design:type', Object)],
+  MusicMoodFeed.prototype,
+  'id',
+  void 0,
+);
 exports.MusicMoodFeed = MusicMoodFeed;
 //# sourceMappingURL=music-mood.feed.js.map

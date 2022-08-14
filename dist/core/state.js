@@ -45,7 +45,7 @@ class State {
     this.adsOptOut = false;
     this.thumbnailCacheBustingValue = 1000;
     this.cookieStore = new tough_cookie_1.MemoryCookieStore();
-    this.cookieJar = request_1.jar(this.cookieStore);
+    this.cookieJar = (0, request_1.jar)(this.cookieStore);
     this.checkpoint = null;
     this.challenge = null;
     this.clientSessionIdLifetime = 1200000;
@@ -217,12 +217,42 @@ class State {
     return new Chance(`${seed}${this.deviceId}${Math.round(Date.now() / lifetime)}`).guid();
   }
 }
-State.stateDebug = debug_1.default('ig:state');
-__decorate([decorators_1.Enumerable(false), __metadata('design:type', Object)], State.prototype, 'constants', void 0);
-__decorate([decorators_1.Enumerable(false), __metadata('design:type', String)], State.prototype, 'proxyUrl', void 0);
-__decorate([decorators_1.Enumerable(false), __metadata('design:type', Object)], State.prototype, 'cookieStore', void 0);
-__decorate([decorators_1.Enumerable(false), __metadata('design:type', Object)], State.prototype, 'cookieJar', void 0);
-__decorate([decorators_1.Enumerable(false), __metadata('design:type', Object)], State.prototype, 'checkpoint', void 0);
-__decorate([decorators_1.Enumerable(false), __metadata('design:type', Object)], State.prototype, 'challenge', void 0);
+State.stateDebug = (0, debug_1.default)('ig:state');
+__decorate(
+  [(0, decorators_1.Enumerable)(false), __metadata('design:type', Object)],
+  State.prototype,
+  'constants',
+  void 0,
+);
+__decorate(
+  [(0, decorators_1.Enumerable)(false), __metadata('design:type', String)],
+  State.prototype,
+  'proxyUrl',
+  void 0,
+);
+__decorate(
+  [(0, decorators_1.Enumerable)(false), __metadata('design:type', Object)],
+  State.prototype,
+  'cookieStore',
+  void 0,
+);
+__decorate(
+  [(0, decorators_1.Enumerable)(false), __metadata('design:type', Object)],
+  State.prototype,
+  'cookieJar',
+  void 0,
+);
+__decorate(
+  [(0, decorators_1.Enumerable)(false), __metadata('design:type', Object)],
+  State.prototype,
+  'checkpoint',
+  void 0,
+);
+__decorate(
+  [(0, decorators_1.Enumerable)(false), __metadata('design:type', Object)],
+  State.prototype,
+  'challenge',
+  void 0,
+);
 exports.State = State;
 //# sourceMappingURL=state.js.map

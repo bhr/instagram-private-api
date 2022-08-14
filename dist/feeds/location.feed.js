@@ -52,25 +52,25 @@ class LocationFeed extends feed_1.Feed {
   }
   async items() {
     const response = await this.request();
-    return lodash_1.flatten(
+    return (0, lodash_1.flatten)(
       response.sections.map(section => section.layout_content.medias.map(medias => medias.media)),
     );
   }
 }
 __decorate(
-  [class_transformer_1.Expose(), __metadata('design:type', String)],
+  [(0, class_transformer_1.Expose)(), __metadata('design:type', String)],
   LocationFeed.prototype,
   'nextMaxId',
   void 0,
 );
 __decorate(
-  [class_transformer_1.Expose(), __metadata('design:type', Number)],
+  [(0, class_transformer_1.Expose)(), __metadata('design:type', Number)],
   LocationFeed.prototype,
   'nextPage',
   void 0,
 );
 __decorate(
-  [class_transformer_1.Expose(), __metadata('design:type', Array)],
+  [(0, class_transformer_1.Expose)(), __metadata('design:type', Array)],
   LocationFeed.prototype,
   'nextMediaIds',
   void 0,

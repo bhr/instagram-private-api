@@ -35,13 +35,13 @@ class IgResponseError extends ig_client_error_1.IgClientError {
   }
 }
 __decorate(
-  [decorators_1.Enumerable(false), __metadata('design:type', String)],
+  [(0, decorators_1.Enumerable)(false), __metadata('design:type', String)],
   IgResponseError.prototype,
   'text',
   void 0,
 );
 __decorate(
-  [decorators_1.Enumerable(false), __metadata('design:type', Object)],
+  [(0, decorators_1.Enumerable)(false), __metadata('design:type', Object)],
   IgResponseError.prototype,
   'response',
   void 0,

@@ -40,10 +40,15 @@ class NewsFeed extends feed_1.Feed {
   async items() {
     const body = await this.request();
     return body.stories.map(user =>
-      class_transformer_1.plainToClassFromExist(new responses_1.NewsFeedResponseStoriesItem(this.client), user),
+      (0, class_transformer_1.plainToClassFromExist)(new responses_1.NewsFeedResponseStoriesItem(this.client), user),
     );
   }
 }
-__decorate([class_transformer_1.Expose(), __metadata('design:type', Object)], NewsFeed.prototype, 'nextMaxId', void 0);
+__decorate(
+  [(0, class_transformer_1.Expose)(), __metadata('design:type', Object)],
+  NewsFeed.prototype,
+  'nextMaxId',
+  void 0,
+);
 exports.NewsFeed = NewsFeed;
 //# sourceMappingURL=news.feed.js.map

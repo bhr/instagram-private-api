@@ -13,7 +13,7 @@ class FeedFactory {
     this.client = client;
   }
   accountFollowers(options) {
-    return class_transformer_1.plainToClassFromExist(
+    return (0, class_transformer_1.plainToClassFromExist)(
       new feeds_1.AccountFollowersFeed(this.client),
       Object.assign(
         { id: options && typeof options !== 'object' ? options : this.client.state.cookieUserId },
@@ -22,7 +22,7 @@ class FeedFactory {
     );
   }
   accountFollowing(options) {
-    return class_transformer_1.plainToClassFromExist(
+    return (0, class_transformer_1.plainToClassFromExist)(
       new feeds_1.AccountFollowingFeed(this.client),
       Object.assign(
         { id: options && typeof options !== 'object' ? options : this.client.state.cookieUserId },
@@ -86,13 +86,13 @@ class FeedFactory {
     return feed;
   }
   reelsMedia(options) {
-    return class_transformer_1.plainToClassFromExist(new feeds_1.ReelsMediaFeed(this.client), options);
+    return (0, class_transformer_1.plainToClassFromExist)(new feeds_1.ReelsMediaFeed(this.client), options);
   }
   userStory(userId) {
-    return class_transformer_1.plainToClassFromExist(new user_story_feed_1.UserStoryFeed(this.client), { userId });
+    return (0, class_transformer_1.plainToClassFromExist)(new user_story_feed_1.UserStoryFeed(this.client), { userId });
   }
   reelsTray(reason = 'cold_start') {
-    return class_transformer_1.plainToClassFromExist(new feeds_1.ReelsTrayFeed(this.client), { reason });
+    return (0, class_transformer_1.plainToClassFromExist)(new feeds_1.ReelsTrayFeed(this.client), { reason });
   }
   timeline(reason) {
     const feed = new feeds_1.TimelineFeed(this.client);
@@ -102,7 +102,7 @@ class FeedFactory {
     return feed;
   }
   musicTrending(product = 'story_camera_music_overlay_post_capture') {
-    return class_transformer_1.plainToClassFromExist(new feeds_1.MusicTrendingFeed(this.client), { product });
+    return (0, class_transformer_1.plainToClassFromExist)(new feeds_1.MusicTrendingFeed(this.client), { product });
   }
   musicSearch(query, product = 'story_camera_music_overlay_post_capture') {
     const options = {
@@ -110,40 +110,40 @@ class FeedFactory {
       product,
       searchSessionId: new Chance(query).guid(),
     };
-    return class_transformer_1.plainToClassFromExist(new feeds_1.MusicSearchFeed(this.client), options);
+    return (0, class_transformer_1.plainToClassFromExist)(new feeds_1.MusicSearchFeed(this.client), options);
   }
   musicGenre(id, product = 'story_camera_music_overlay_post_capture') {
-    return class_transformer_1.plainToClassFromExist(new feeds_1.MusicGenreFeed(this.client), {
+    return (0, class_transformer_1.plainToClassFromExist)(new feeds_1.MusicGenreFeed(this.client), {
       id,
       product,
     });
   }
   musicMood(id, product = 'story_camera_music_overlay_post_capture') {
-    return class_transformer_1.plainToClassFromExist(new feeds_1.MusicMoodFeed(this.client), {
+    return (0, class_transformer_1.plainToClassFromExist)(new feeds_1.MusicMoodFeed(this.client), {
       id,
       product,
     });
   }
   usertags(id) {
-    return class_transformer_1.plainToClassFromExist(new feeds_1.UsertagsFeed(this.client), { id });
+    return (0, class_transformer_1.plainToClassFromExist)(new feeds_1.UsertagsFeed(this.client), { id });
   }
   postsInsightsFeed(options) {
-    return class_transformer_1.plainToClassFromExist(new feeds_1.PostsInsightsFeed(this.client), { options });
+    return (0, class_transformer_1.plainToClassFromExist)(new feeds_1.PostsInsightsFeed(this.client), { options });
   }
   storiesInsights(timeframe) {
-    return class_transformer_1.plainToClassFromExist(new feeds_1.StoriesInsightsFeed(this.client), { timeframe });
+    return (0, class_transformer_1.plainToClassFromExist)(new feeds_1.StoriesInsightsFeed(this.client), { timeframe });
   }
   saved() {
     return new feeds_1.SavedFeed(this.client);
   }
   listReelMediaViewers(mediaId) {
-    return class_transformer_1.plainToClassFromExist(
+    return (0, class_transformer_1.plainToClassFromExist)(
       new list_reel_media_viewer_feed_1.ListReelMediaViewerFeed(this.client),
       { mediaId },
     );
   }
   mediaInlineChildComments(mediaId, commentId, minId) {
-    return class_transformer_1.plainToClassFromExist(
+    return (0, class_transformer_1.plainToClassFromExist)(
       new media_inline_child_comments_feed_1.MediaInlineChildCommentsFeed(this.client),
       {
         mediaId,
@@ -153,12 +153,12 @@ class FeedFactory {
     );
   }
   igtvBrowse(isPrefetch) {
-    return class_transformer_1.plainToClassFromExist(new feeds_1.IgtvBrowseFeed(this.client), {
+    return (0, class_transformer_1.plainToClassFromExist)(new feeds_1.IgtvBrowseFeed(this.client), {
       isPrefetch: !!isPrefetch,
     });
   }
   storyQuestionResponses(mediaId, stickerId) {
-    return class_transformer_1.plainToClassFromExist(
+    return (0, class_transformer_1.plainToClassFromExist)(
       new media_sticker_responses_feed_1.MediaStickerResponsesFeed(this.client),
       {
         mediaId,
@@ -170,7 +170,7 @@ class FeedFactory {
     );
   }
   storyPollVoters(mediaId, stickerId) {
-    return class_transformer_1.plainToClassFromExist(
+    return (0, class_transformer_1.plainToClassFromExist)(
       new media_sticker_responses_feed_1.MediaStickerResponsesFeed(this.client),
       {
         mediaId,
@@ -182,7 +182,7 @@ class FeedFactory {
     );
   }
   storyQuizParticipants(mediaId, stickerId) {
-    return class_transformer_1.plainToClassFromExist(
+    return (0, class_transformer_1.plainToClassFromExist)(
       new media_sticker_responses_feed_1.MediaStickerResponsesFeed(this.client),
       {
         mediaId,
@@ -194,7 +194,7 @@ class FeedFactory {
     );
   }
   storySliderVoters(mediaId, stickerId) {
-    return class_transformer_1.plainToClassFromExist(
+    return (0, class_transformer_1.plainToClassFromExist)(
       new media_sticker_responses_feed_1.MediaStickerResponsesFeed(this.client),
       {
         mediaId,
@@ -209,7 +209,7 @@ class FeedFactory {
     if (/[0-9]/.test(id.toString())) {
       id = `user_${id}`;
     }
-    return class_transformer_1.plainToClassFromExist(new feeds_1.IgtvChannelFeed(this.client), {
+    return (0, class_transformer_1.plainToClassFromExist)(new feeds_1.IgtvChannelFeed(this.client), {
       channelId: id,
     });
   }
@@ -220,7 +220,7 @@ class FeedFactory {
     return new feeds_1.LikedFeed(this.client);
   }
   topicalExplore(options = {}) {
-    return class_transformer_1.plainToClassFromExist(new feeds_1.TopicalExploreFeed(this.client), options);
+    return (0, class_transformer_1.plainToClassFromExist)(new feeds_1.TopicalExploreFeed(this.client), options);
   }
 }
 exports.FeedFactory = FeedFactory;

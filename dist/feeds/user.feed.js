@@ -41,6 +41,11 @@ class UserFeed extends feed_1.Feed {
     return body.items;
   }
 }
-__decorate([class_transformer_1.Expose(), __metadata('design:type', String)], UserFeed.prototype, 'nextMaxId', void 0);
+__decorate(
+  [(0, class_transformer_1.Expose)(), __metadata('design:type', String)],
+  UserFeed.prototype,
+  'nextMaxId',
+  void 0,
+);
 exports.UserFeed = UserFeed;
 //# sourceMappingURL=user.feed.js.map

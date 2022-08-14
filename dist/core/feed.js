@@ -49,7 +49,7 @@ class Feed extends repository_1.Repository {
       process.nextTick(async () => {
         do {
           try {
-            await attempt_1.retry(
+            await (0, attempt_1.retry)(
               async () => {
                 const items = await this.items();
                 observer.next(items);
@@ -86,20 +86,25 @@ class Feed extends repository_1.Repository {
     });
   }
   serialize() {
-    return class_transformer_1.serialize(this, { strategy: 'excludeAll' });
+    return (0, class_transformer_1.serialize)(this, { strategy: 'excludeAll' });
   }
   deserialize(data) {
-    class_transformer_1.plainToClassFromExist(this, JSON.parse(data));
+    (0, class_transformer_1.plainToClassFromExist)(this, JSON.parse(data));
   }
   toPlain() {
-    return class_transformer_1.classToPlain(this, { strategy: 'excludeAll' });
+    return (0, class_transformer_1.classToPlain)(this, { strategy: 'excludeAll' });
   }
   isMoreAvailable() {
     return !!this.moreAvailable;
   }
 }
-__decorate([class_transformer_1.Expose(), __metadata('design:type', Boolean)], Feed.prototype, 'moreAvailable', void 0);
-__decorate([decorators_1.Enumerable(false), __metadata('design:type', Object)], Feed.prototype, 'chance', void 0);
-__decorate([class_transformer_1.Expose(), __metadata('design:type', Object)], Feed.prototype, 'rankToken', void 0);
+__decorate(
+  [(0, class_transformer_1.Expose)(), __metadata('design:type', Boolean)],
+  Feed.prototype,
+  'moreAvailable',
+  void 0,
+);
+__decorate([(0, decorators_1.Enumerable)(false), __metadata('design:type', Object)], Feed.prototype, 'chance', void 0);
+__decorate([(0, class_transformer_1.Expose)(), __metadata('design:type', Object)], Feed.prototype, 'rankToken', void 0);
 exports.Feed = Feed;
 //# sourceMappingURL=feed.js.map
