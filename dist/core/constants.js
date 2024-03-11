@@ -1,8 +1,8 @@
 'use strict';
 Object.defineProperty(exports, '__esModule', { value: true });
 exports.WEBHOST = exports.HOST = exports.WEB_HOSTNAME = exports.HOSTNAME = exports.BLOKS_VERSION_ID = exports.FACEBOOK_ORCA_APPLICATION_ID = exports.FACEBOOK_OTA_FIELDS = exports.FACEBOOK_ANALYTICS_APPLICATION_ID = exports.LOGIN_EXPERIMENTS = exports.EXPERIMENTS = exports.SIGNATURE_VERSION = exports.BREADCRUMB_KEY = exports.SIGNATURE_KEY = exports.APP_VERSION_CODE = exports.APP_VERSION = void 0;
-exports.APP_VERSION = '121.0.0.29.119';
-exports.APP_VERSION_CODE = '185203708';
+exports.APP_VERSION = '222.0.0.13.114';
+exports.APP_VERSION_CODE = '350696709';
 exports.SIGNATURE_KEY = '9193488027538fd3450b83b7d05286d4ca9599a0f7eeed90d8c85925698a05dc';
 exports.BREADCRUMB_KEY = 'iN4$aGr0m';
 exports.SIGNATURE_VERSION = '4';
@@ -14,7 +14,7 @@ exports.FACEBOOK_ANALYTICS_APPLICATION_ID = '567067343352427';
 exports.FACEBOOK_OTA_FIELDS =
   'update%7Bdownload_uri%2Cdownload_uri_delta_base%2Cversion_code_delta_base%2Cdownload_uri_delta%2Cfallback_to_full_update%2Cfile_size_delta%2Cversion_code%2Cpublished_date%2Cfile_size%2Cota_bundle_type%2Cresources_checksum%2Callowed_networks%2Crelease_id%7D';
 exports.FACEBOOK_ORCA_APPLICATION_ID = '124024574287414';
-exports.BLOKS_VERSION_ID = '1b030ce63a06c25f3e4de6aaaf6802fe1e76401bc5ab6e5fb85ed6c2d333e0c7';
+exports.BLOKS_VERSION_ID = '388ece79ebc0e70e87873505ed1b0ff335ae2868a978cc951b6721c41d46a30a';
 exports.HOSTNAME = 'i.instagram.com';
 exports.WEB_HOSTNAME = 'www.instagram.com';
 exports.HOST = `https://${exports.HOSTNAME}/`;

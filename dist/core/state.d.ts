@@ -2,6 +2,13 @@
 import { Cookie, CookieJar, MemoryCookieStore } from 'tough-cookie';
 import * as Constants from './constants';
 import { ChallengeStateResponse, CheckpointResponse } from '../responses';
+declare const AUTHORIZATION_TAG: unique symbol;
+interface ParsedAuthorization {
+  ds_user_id: string;
+  sessionid: string;
+  should_use_header_over_cookie: string;
+  [AUTHORIZATION_TAG]: string;
+}
 export declare class State {
   private static stateDebug;
   get signatureKey(): string;
@@ -52,6 +59,7 @@ export declare class State {
   challenge: ChallengeStateResponse | null;
   clientSessionIdLifetime: number;
   pigeonSessionIdLifetime: number;
+  parsedAuthorization?: ParsedAuthorization;
   get clientSessionId(): string;
   get pigeonSessionId(): string;
   get appUserAgent(): string;
@@ -83,4 +91,7 @@ export declare class State {
   deserialize(state: string | any): Promise<void>;
   generateDevice(seed: string): void;
   private generateTemporaryGuid;
+  private hasValidAuthorization;
+  private updateAuthorization;
 }
+export {};

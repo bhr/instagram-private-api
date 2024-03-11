@@ -31,6 +31,7 @@ const Constants = require('./constants');
 const errors_1 = require('../errors');
 const decorators_1 = require('../decorators');
 const debug_1 = require('debug');
+const AUTHORIZATION_TAG = Symbol('authorization-tag');
 class State {
   constructor() {
     this.constants = Constants;
@@ -38,7 +39,7 @@ class State {
     this.language = 'en_US';
     this.timezoneOffset = String(new Date().getTimezoneOffset() * -60);
     this.radioType = 'wifi-none';
-    this.capabilitiesHeader = '3brTvwE=';
+    this.capabilitiesHeader = '3brTv10=';
     this.connectionTypeHeader = 'WIFI';
     this.isLayoutRTL = false;
     this.euDCEnabled = undefined;
@@ -132,7 +133,16 @@ class State {
     }
   }
   get cookieUserId() {
-    return this.extractCookieValue('ds_user_id');
+    const cookie = this.extractCookie('ds_user_id');
+    if (cookie !== null) {
+      return cookie.value;
+    }
+    this.updateAuthorization();
+    if (!this.parsedAuthorization) {
+      State.stateDebug('Could not find ds_user_id');
+      throw new errors_1.IgCookieNotFoundError('ds_user_id');
+    }
+    return this.parsedAuthorization.ds_user_id;
   }
   get cookieUsername() {
     return this.extractCookieValue('ds_user');
@@ -216,6 +226,30 @@ class State {
   generateTemporaryGuid(seed, lifetime) {
     return new Chance(`${seed}${this.deviceId}${Math.round(Date.now() / lifetime)}`).guid();
   }
+  hasValidAuthorization() {
+    return this.parsedAuthorization && this.parsedAuthorization[AUTHORIZATION_TAG] === this.authorization;
+  }
+  updateAuthorization() {
+    var _a;
+    if (!this.hasValidAuthorization()) {
+      if ((_a = this.authorization) === null || _a === void 0 ? void 0 : _a.startsWith('Bearer IGT:2:')) {
+        try {
+          this.parsedAuthorization = Object.assign(
+            Object.assign(
+              {},
+              JSON.parse(Buffer.from(this.authorization.substring('Bearer IGT:2:'.length), 'base64').toString()),
+            ),
+            { [AUTHORIZATION_TAG]: this.authorization },
+          );
+        } catch (e) {
+          State.stateDebug(`Could not parse authorization: ${e}`);
+          this.parsedAuthorization = undefined;
+        }
+      } else {
+        this.parsedAuthorization = undefined;
+      }
+    }
+  }
 }
 State.stateDebug = (0, debug_1.default)('ig:state');
 __decorate(
@@ -252,6 +286,12 @@ __decorate(
   [(0, decorators_1.Enumerable)(false), __metadata('design:type', Object)],
   State.prototype,
   'challenge',
+  void 0,
+);
+__decorate(
+  [(0, decorators_1.Enumerable)(false), __metadata('design:type', Object)],
+  State.prototype,
+  'parsedAuthorization',
   void 0,
 );
 exports.State = State;
